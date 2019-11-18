@@ -34,5 +34,12 @@ RUN pip3 install --upgrade pip
 # Install Ansible using pip3
 RUN pip3 install ansible
 
+# Install additional dependencies
+RUN pip install ansible[azure] \
+    boto \
+    apache-libcloud \
+    pyrax \
+    cs
+
 # Disable requiretty
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
