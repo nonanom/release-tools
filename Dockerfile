@@ -35,7 +35,7 @@ RUN pip3 install --upgrade pip
 RUN pip3 install ansible
 
 # Install additional dependencies
-RUN pip install ansible[azure] \
+RUN pip3 install ansible[azure] \
     azure-cli \
     boto \
     apache-libcloud \
