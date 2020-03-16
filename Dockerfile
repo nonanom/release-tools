@@ -37,6 +37,7 @@ RUN pip3 install ansible
 # Install additional dependencies
 RUN pip3 install ansible[azure] \
     azure-cli \
+    kubernetes \
     boto \
     apache-libcloud \
     pyrax \
