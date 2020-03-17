@@ -18,6 +18,8 @@ RUN yum makecache \
  && yum -y install \
       sudo \
       which \
+      jq \
+      unzip \
       hostname \
       python3 \
       python3-pip \
@@ -27,6 +29,10 @@ RUN yum makecache \
       sshpass \
       openssh-server \
  && yum clean all
+
+# HashiCorp Vault
+RUN curl --silent --junk-session-cookies --location --insecure --remote-name https://releases.hashicorp.com/vault/1.2.3/vault_1.2.3_linux_amd64.zip
+RUN unzip -qq vault_1.2.3_linux_amd64.zip && rm vault_1.2.3_linux_amd64.zip && chmod +x vault && mv vault /usr/local/bin/vault
 
 # Upgrade pip3
 RUN pip3 install --upgrade pip
