@@ -1,4 +1,4 @@
-FROM centos:latest
+FROM centos:7
 
 # Install systemd -- See https://hub.docker.com/_/centos/
 RUN yum -y update; yum clean all; \
