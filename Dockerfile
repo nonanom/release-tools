@@ -12,10 +12,10 @@ rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
 # Install dependencies
-RUN yum makecache
-RUN yum -y install epel-release initscripts
-RUN yum -y update
-RUN yum -y install \
+RUN yum makecache \
+ && yum -y install epel-release initscripts \
+ && yum -y update \
+ && yum -y install \
       sudo \
       which \
       jq \
@@ -28,8 +28,8 @@ RUN yum -y install \
       gcc \
       wget \
       sshpass \
-      openssh-server
-RUN yum clean all
+      openssh-server \
+ && yum clean all
 
 # HashiCorp Vault
 RUN curl --silent --junk-session-cookies --location --insecure --remote-name https://releases.hashicorp.com/vault/1.2.3/vault_1.2.3_linux_amd64.zip
