@@ -14,7 +14,7 @@ rm -f /lib/systemd/system/anaconda.target.wants/*;
 # Install dependencies
 RUN yum makecache
 RUN yum -y install epel-release initscripts
-RUN yum -y updatev
+RUN yum -y update
 RUN yum -y install \
       sudo \
       which \
