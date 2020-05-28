@@ -40,9 +40,6 @@ RUN pip3 install --upgrade pip
 # Install Ansible using pip3
 RUN pip3 install ansible
 
-# Install Helm
-RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 && chmod 700 get_helm.sh && ./get_helm.sh
-
 # Install additional dependencies
 RUN pip3 install ansible[azure] \
     azure-cli \
@@ -50,7 +47,10 @@ RUN pip3 install ansible[azure] \
     apache-libcloud \
     pyrax \
     cs
-    
+
+# Install Helm
+RUN curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3 && chmod 700 get_helm.sh && ./get_helm.sh
+
 # Upgrade azure-cli
 RUN pip3 install --upgrade azure-cli
 
