@@ -16,19 +16,19 @@ RUN yum makecache \
  && yum -y install epel-release initscripts \
  && yum -y update \
  && yum -y install \
-      sudo \
-      which \
-      jq \
-      unzip \
-      hostname \
-      python3 \
-      python3-pip \
-      libffi-devel \
-      openssl-devel \
-      gcc \
-      wget \
-      sshpass \
-      openssh-server \
+    sudo \
+    which \
+    jq \
+    unzip \
+    hostname \
+    python3 \
+    python3-pip \
+    libffi-devel \
+    openssl-devel \
+    gcc \
+    wget \
+    sshpass \
+    openssh-server \
  && yum clean all
 
 # HashiCorp Vault
