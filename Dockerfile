@@ -19,6 +19,7 @@ RUN yum makecache \
     sudo \
     which \
     jq \
+    yq \
     unzip \
     hostname \
     python3 \
